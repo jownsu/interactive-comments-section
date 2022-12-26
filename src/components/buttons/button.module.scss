@@ -1,0 +1,21 @@
+@import "../../assets/scss/variables.scss";
+
+.btn {
+    border-radius: .6rem;
+    border: none;
+    color: $color-white;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    padding: 1.3rem 2.5rem;
+    text-transform: uppercase;
+
+    &.primary {
+        background: $color-moderate-blue;
+    }
+    
+    &:disabled {
+        cursor: not-allowed;
+        opacity: .5;
+    }
+}

@@ -1,0 +1,27 @@
+@import "../../assets/scss/variables.scss";
+
+.comment {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    &_main {
+        flex: 1;
+    }
+
+    &_header {
+        align-items: center;
+        display: flex;
+        margin-bottom: 1rem;
+    }
+
+    &_created_at {
+        color: $color-grayish-blue;
+        font-size: 1.2rem;
+        margin-right: auto;
+    }
+
+    &_content {
+        color: $color-grayish-blue;
+    }
+}

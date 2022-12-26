@@ -1,0 +1,29 @@
+@import "../../assets/scss/variables.scss";
+
+.upvote {
+    align-items: center;
+    background: $color-very-light-gray;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 10rem;
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 1rem;
+    }
+
+    p {
+        color: $color-moderate-blue;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    img {
+        height: auto;
+        width: 1.2rem;
+    }
+}
