@@ -1,7 +1,9 @@
-const PUBLIC_URL = window.location.origin;
-const AVATAR_URL = PUBLIC_URL + "/avatars/";
+export const PUBLIC_URL = window.location.origin;
+export const AVATAR_URL = PUBLIC_URL + "/avatars/";
 
-export {
-    PUBLIC_URL,
-    AVATAR_URL
+
+
+export const CURRENT_USER =  {
+    username: "jownsu",
+    image:  "images/avatars/me.png"
 }

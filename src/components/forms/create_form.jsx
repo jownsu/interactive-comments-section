@@ -2,9 +2,15 @@ import Avatar from "../avatar/avatar";
 import { PrimaryButton } from "../buttons/button";
 import Card from "../card/card";
 import { useForm } from "react-hook-form";
-import styles from "./create_comment_form.module.scss";
+import styles from "./create_form.module.scss";
+import { CURRENT_USER } from "../../assets/data/constants";
 
-const CreateCommentForm = ({onSubmit = () => {}}) => {
+const CreateForm = (props) => {
+    const {
+        onSubmit = () => {}, 
+        btnText = "Send",
+        placeholder = "Add a comment..."
+    } = props;
     const { register, handleSubmit, watch, reset } = useForm();
 
     const submitHandler = (formData) => {
@@ -15,19 +21,19 @@ const CreateCommentForm = ({onSubmit = () => {}}) => {
     return (
         <Card className={styles.add_comment}>
             <Avatar 
-                url="images/avatars/me.png"
-                alt="Jhones"    
+                url={CURRENT_USER.image}
+                alt={CURRENT_USER.username}    
             />    
             <form action="" onSubmit={handleSubmit(submitHandler)}>
                 <textarea 
                     {...register("content")}
                     tabIndex="1"
-                    placeholder="Add a comment..."
+                    placeholder={placeholder}
                     autoFocus
                 ></textarea>
                 <PrimaryButton 
                     type="submit" 
-                    text="Send" 
+                    text={btnText} 
                     tabIndex="2"
                     disabled={!watch("content")}
                 />
@@ -36,4 +42,4 @@ const CreateCommentForm = ({onSubmit = () => {}}) => {
     );
 }
 
-export default CreateCommentForm;
+export default CreateForm;

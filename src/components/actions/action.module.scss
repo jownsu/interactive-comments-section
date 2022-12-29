@@ -12,8 +12,7 @@
     gap: .5rem;
     outline: none;
 
-    &:disabled {
-        cursor: not-allowed;
+    &.active {
         opacity: .6;
     }
 

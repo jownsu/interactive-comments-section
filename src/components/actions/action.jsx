@@ -12,8 +12,7 @@ export const ReplyAction = (props) => {
     return (    
         <button 
             type="button"
-            className={`${styles.action} ${styles.primary}`} 
-            disabled={disabled}
+            className={`${styles.action} ${styles.primary} ${disabled ? styles.active : null}`} 
             onClick={onClick}
         >
             <img src={ReplyIcon} alt="reply icon" />
