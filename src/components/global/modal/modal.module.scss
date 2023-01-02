@@ -1,0 +1,17 @@
+@import "../../../assets/scss/variables.scss";
+
+.modal {
+    background: rgba($color-dark-blue, .5);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    overflow: hidden;
+
+    &_body {
+        margin: 10% auto;
+        padding: 3rem;
+        width: 100%;
+    }
+}

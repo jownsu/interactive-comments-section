@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { incrementScore, decrementScore } from "../../__reducers/comments/comments.reducer";
-import Card from "../card/card";
+import { showDeleteReplyModal } from "../../__reducers/modal/modal.reducer";
+import Card from "../global/card/card";
 import Score from "../score/score";
 import Avatar from "../avatar/avatar"
 import { DeleteAction, EditAction } from "../actions/action";
@@ -30,6 +31,10 @@ const ReplyItem = ({reply}) => {
         } 
     }
 
+    const clickDeleteHandler = () => {
+        dispatch(showDeleteReplyModal({comment_id, id}));
+    }
+
     return (
         <div className={styles.comment_container}>
             <Card className={styles.comment}>
@@ -49,7 +54,7 @@ const ReplyItem = ({reply}) => {
                             { user.username === CURRENT_USER.username &&
                                 <>
                                     <EditAction />                            
-                                    <DeleteAction />                            
+                                    <DeleteAction onClick={clickDeleteHandler} />                            
                                 </>
                             }
                         </div>

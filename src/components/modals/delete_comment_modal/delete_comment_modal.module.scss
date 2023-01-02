@@ -1,0 +1,31 @@
+@import "../../../assets/scss/variables.scss";
+
+.delete_modal {
+    width: 100%;
+    max-width: 35rem;
+    margin: 10% auto;
+    padding: 3rem;
+
+    h3 {
+        color: $color-dark-blue;
+        font-weight: 500;
+        font-size: 2rem;
+        letter-spacing: .1rem;
+    }
+
+    p {
+        color: $color-grayish-blue;
+        margin: 2rem 0 2.5rem;
+    }
+
+    form {
+        display: flex;
+        gap: 1rem;
+
+        > * {
+            flex: 1;
+        }
+    }
+}
+
+

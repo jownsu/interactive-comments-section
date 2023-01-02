@@ -41,5 +41,6 @@ textarea {
 
 .container {
     padding: 0 35rem;
-    width: $bp-large;
+    width: 100%;
+    max-width: $bp-large;
 }

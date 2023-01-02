@@ -14,6 +14,30 @@ const addComment = (state, action) => {
     ]
 }
 
+const deleteComment = (state, action) => {
+    state.comments = state.comments.filter(comment => comment.id !== action.payload)
+}
+
+const addReply = (state, action) => {
+    const comment = state.comments.find(comment => comment.id === action.payload.comment_id);
+    comment.replies = [
+        ...comment.replies, 
+        {
+            id: generateId(),
+            comment_id: action.payload.comment_id,
+            content: action.payload.content,
+            score: 0,
+            // "replyingTo": "maxblagun",
+            user: CURRENT_USER
+        }
+    ];
+}
+
+const deleteReply = (state, action) => {
+    const comment = state.comments.find(comment => comment.id === action.payload.comment_id);
+    comment.replies = comment.replies.filter(reply => reply.id !== action.payload.id);
+}
+
 const incrementScore = (state, action) => {
     const comment = state.comments.find(comment => comment.id === action.payload.comment_id)
 
@@ -38,30 +62,17 @@ const decrementScore = (state, action) => {
     }
 }
 
-const addReply = (state, action) => {
-    const comment = state.comments.find(comment => comment.id === action.payload.comment_id);
-    comment.replies = [
-        ...comment.replies, 
-        {
-            id: generateId(),
-            comment_id: action.payload.comment_id,
-            content: action.payload.content,
-            score: 0,
-            // "replyingTo": "maxblagun",
-            user: CURRENT_USER
-        }
-    ];
-}
-
 const generateId = () => {
     return Math.floor(Date.now() + Math.random());
 }
 
 const commentsAction = {
     addComment,
+    deleteComment,
+    addReply,
+    deleteReply,
     incrementScore,
-    decrementScore,
-    addReply
+    decrementScore
 }
 
 export default commentsAction;

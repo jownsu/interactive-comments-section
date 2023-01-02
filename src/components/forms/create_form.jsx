@@ -1,6 +1,6 @@
 import Avatar from "../avatar/avatar";
-import { PrimaryButton } from "../buttons/button";
-import Card from "../card/card";
+import { PrimaryButton } from "../global/buttons/button";
+import Card from "../global/card/card";
 import { useForm } from "react-hook-form";
 import styles from "./create_form.module.scss";
 import { CURRENT_USER } from "../../assets/data/constants";

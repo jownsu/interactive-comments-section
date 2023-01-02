@@ -60,17 +60,21 @@ const commentsManagement = createSlice({
     initialState,
     reducers: {
         addComment: commentsAction.addComment,
+        deleteComment: commentsAction.deleteComment,
+        addReply: commentsAction.addReply,
+        deleteReply: commentsAction.deleteReply,
         incrementScore: commentsAction.incrementScore,
-        decrementScore: commentsAction.decrementScore,
-        addReply: commentsAction.addReply
+        decrementScore: commentsAction.decrementScore
     }
 });
 
 export const { 
     addComment,
+    addReply,
+    deleteReply,
+    deleteComment,
     incrementScore,
-    decrementScore,
-    addReply
+    decrementScore
 } = commentsManagement.actions;
 
 export default commentsManagement.reducer;

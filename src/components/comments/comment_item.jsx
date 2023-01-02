@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { incrementScore, decrementScore } from "../../__reducers/comments/comments.reducer";
-import Card from "../card/card";
+import { showDeleteCommentModal } from "../../__reducers/modal/modal.reducer";
+import Card from "../global/card/card";
 import Score from "../score/score";
 import Avatar from "../avatar/avatar"
 import ReplyList from "../replies/reply_list";
@@ -36,6 +37,10 @@ const CommentItem = ({comment}) => {
         setShowReplyForm(prevShow => !prevShow);
     }
 
+    const clickDeleteHandler = () => {
+        dispatch(showDeleteCommentModal(id))
+    }
+
     return (
         <div className={styles.comment_container}>
             <Card className={styles.comment}>
@@ -59,7 +64,7 @@ const CommentItem = ({comment}) => {
                             { user.username === CURRENT_USER.username &&
                                 <>
                                     <EditAction />                            
-                                    <DeleteAction />                            
+                                    <DeleteAction onClick={clickDeleteHandler} />                            
                                 </>
                             }
                         </div>

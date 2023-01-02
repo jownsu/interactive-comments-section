@@ -1,4 +1,4 @@
-@import "../../assets/scss/variables.scss";
+@import "../../../assets/scss/variables.scss";
 
 .btn {
     border-radius: .6rem;
@@ -12,6 +12,14 @@
 
     &.primary {
         background: $color-moderate-blue;
+    }
+
+    &.danger {
+        background: $color-soft-red;
+    }
+
+    &.grey {
+        background: $color-grayish-blue
     }
     
     &:disabled {
