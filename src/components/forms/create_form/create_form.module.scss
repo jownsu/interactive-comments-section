@@ -1,0 +1,36 @@
+@import "../../../assets/scss/variables.scss";
+
+.add_comment {
+    margin-bottom: 1rem;
+
+    form {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex-direction: row;
+
+        textarea {
+            flex: 1;
+            
+            @media only screen and (max-width: $bp-small) {
+                flex: unset;
+                width: 100%;
+                order: 1;
+            }
+        }
+
+        .avatar {
+            @media only screen and (max-width: $bp-small) {
+                order: 2;
+            }
+        }
+
+        button[type="submit"] {
+            @media only screen and (max-width: $bp-small) {
+                order: 3;
+                margin-left: auto;
+            }
+        }
+    }
+}

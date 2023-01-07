@@ -1,18 +1,35 @@
 @import "../../assets/scss/variables.scss";
 
 .comment {
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: max-content 1fr ;
     margin-bottom: 1rem;
+    align-items: flex-start;
 
-    &_main {
-        flex: 1;
+    &_score {
+        grid-row: 1 / -1;
+        grid-column: 1 / 2;
+        margin-right: 2rem;
+
+        @media only screen and (max-width: $bp-small) {
+            grid-row: 3 / 4;
+            grid-column: 1 / 2;
+        }
     }
 
-    &_header {
+    &_user {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+
         align-items: center;
         display: flex;
         margin-bottom: 1rem;
+
+        @media only screen and (max-width: $bp-small) {
+            grid-row: 1 / 2;
+            grid-column: 1 / -1;
+        }
     }
 
     &_created_at {
@@ -22,12 +39,31 @@
     }
 
     &_actions {
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
         display: flex;
         gap: 1rem;
+        align-self: center;
+
+        @media only screen and (max-width: $bp-small) {
+            grid-row: 3 / 4;
+            grid-column: 3 / 4;
+        }
     }
 
     &_content {
-        color: $color-grayish-blue;
+        grid-row: 2 / 3;
+        grid-column: 2 / -1;
+        
+        p {
+            color: $color-grayish-blue;
+        }
+        
+        @media only screen and (max-width: $bp-small) {
+            grid-row: 2 / 3;
+            grid-column: 1 / -1;
+            margin-bottom: 2rem;
+        }
     }
 }
 

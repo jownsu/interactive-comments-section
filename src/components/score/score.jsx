@@ -5,12 +5,13 @@ import MinusIcon from "../../assets/images/icon-minus.svg";
 const Score = (props) => {
     const { 
         score = 0,
+        className,
         onPlusClick = () => {},
         onMinusClick = () => {}
     } = props;
 
     return (
-        <div className={styles.upvote}>
+        <div className={`${styles.upvote} ${className}`}>
             <button onClick={onPlusClick}>
                 <img src={PlusIcon} alt="plus icon" />
             </button>

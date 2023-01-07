@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addReply } from "../../__reducers/comments/comments.reducer";
-import CreateForm from "../forms/create_form";
+import CreateForm from "../forms/create_form/create_form";
 import ReplyItem from "./reply_item";
 import styles from "./reply_list.module.scss";
 

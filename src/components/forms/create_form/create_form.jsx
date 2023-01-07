@@ -1,9 +1,9 @@
-import Avatar from "../avatar/avatar";
-import { PrimaryButton } from "../global/buttons/button";
-import Card from "../global/card/card";
+import Avatar from "../../avatar/avatar";
+import { PrimaryButton } from "../../global/buttons/button";
+import Card from "../../global/card/card";
 import { useForm } from "react-hook-form";
 import styles from "./create_form.module.scss";
-import { CURRENT_USER } from "../../assets/data/constants";
+import { CURRENT_USER } from "../../../assets/data/constants";
 
 const CreateForm = (props) => {
     const {
@@ -19,12 +19,13 @@ const CreateForm = (props) => {
     }
 
     return (
-        <Card className={styles.add_comment}>
-            <Avatar 
-                url={CURRENT_USER.image}
-                alt={CURRENT_USER.username}    
-            />    
+        <Card className={styles.add_comment}>  
             <form action="" onSubmit={handleSubmit(submitHandler)}>
+                <Avatar 
+                    url={CURRENT_USER.image}
+                    alt={CURRENT_USER.username}    
+                    className={styles.avatar}
+                />  
                 <textarea 
                     {...register("content")}
                     tabIndex="1"

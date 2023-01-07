@@ -18,6 +18,13 @@ const deleteComment = (state, action) => {
     state.comments = state.comments.filter(comment => comment.id !== action.payload)
 }
 
+const updateComment = (state, action) => {
+    const {id, newContent} = action.payload;
+    const comment = state.comments.find(comment => comment.id === id);
+    comment.content = newContent;
+}
+
+
 const addReply = (state, action) => {
     const comment = state.comments.find(comment => comment.id === action.payload.comment_id);
     comment.replies = [
@@ -36,6 +43,13 @@ const addReply = (state, action) => {
 const deleteReply = (state, action) => {
     const comment = state.comments.find(comment => comment.id === action.payload.comment_id);
     comment.replies = comment.replies.filter(reply => reply.id !== action.payload.id);
+}
+
+const updateReply = (state, action) => {
+    const {id, comment_id, newContent} = action.payload;
+    const comment = state.comments.find(comment => comment.id === comment_id);
+    const reply = comment.replies.find(reply => reply.id === id);
+    reply.content = newContent;
 }
 
 const incrementScore = (state, action) => {
@@ -69,8 +83,10 @@ const generateId = () => {
 const commentsAction = {
     addComment,
     deleteComment,
+    updateComment,
     addReply,
     deleteReply,
+    updateReply,
     incrementScore,
     decrementScore
 }

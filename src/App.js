@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addComment } from "./__reducers/comments/comments.reducer";
 import DeleteCommentModal from "./components/modals/delete_comment_modal/delete_comment_modal";
 import DeleteReplyModal from "./components/modals/delete_reply_modal/delete_reply_modal";
-import CreateForm from "./components/forms/create_form";
+import CreateForm from "./components/forms/create_form/create_form";
 import CommentList from "./components/comments/comment_list";
 
 

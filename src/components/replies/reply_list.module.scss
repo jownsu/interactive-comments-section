@@ -4,4 +4,9 @@
     border-left: 3px solid $color-light-gray  ;
     margin-left: 3rem;
     padding-left: 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+        padding-left: 1rem;
+        margin-left: 1rem;
+    }
 }

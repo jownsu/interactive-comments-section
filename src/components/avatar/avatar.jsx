@@ -5,12 +5,13 @@ const Avatar = (props) => {
         url="", 
         alt="avatar", 
         username="",
-        you=false
+        you=false,
+        className
     } = props;
 
 
     return (
-        <div className={styles.avatar}>
+        <div className={`${styles.avatar} ${className}`}>
             <img 
                 src={url} 
                 alt={alt} 
