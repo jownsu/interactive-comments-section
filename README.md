@@ -24,7 +24,7 @@ I am proud of the hard work and dedication that went into developing this soluti
 Thank you for allowing me to showcase my work, and I hope that my solution inspires you as it has inspired me.
 
 ![](./screenshots/3.png)
-![](./screenshots/2.png)
+![](./screenshots/11.png)
 ![](./screenshots/1.png)
 
 ### Links
